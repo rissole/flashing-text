@@ -5,7 +5,27 @@
 <link href='../static/literally.css' rel='stylesheet' type='text/css' >
 </head>
 
-<body class='black-screen'>
-    <span class='blink huge red'>[BREAKING]</span>
+<body class='black-screen' style='visibility: hidden'>
+    <div class='huge red'>QUESTIONABLE ETHICS</div>
 </body>
+
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+<script type='text/javascript' src='../static/jquery.fittext.js'></script>
+<script type='text/javascript'>
+    jQuery.fn.center = function () {
+        this.css('position', 'absolute');
+        this.css('top', Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
+                                 $(window).scrollTop()) + 'px');
+        this.css('left', Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + 
+                                  $(window).scrollLeft()) + 'px');
+        return this;
+    }
+
+    $('.huge').fitText();
+    $('.huge').center().css('visibility', 'visible').addClass('blink');
+    $(window).on('resize.fittext orientationchange.fittext', function() {
+       $('.huge').center();
+    });
+</script>
+
 </html>
