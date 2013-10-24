@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>[BREAKING]</title>
+<link href='http://fonts.googleapis.com/css?family=Coda+Caption:800' rel='stylesheet' type='text/css'>
+<link href='../static/literally.css' rel='stylesheet' type='text/css' >
+</head>
+
+<body class='black-screen'>
+    <div class='huge red'>Make flashing text.</div>
+    <div class='middle'>
+        <div class='red'>Enter your text to flash here</div>
+        <input id='uwotm8' value='[BREAKING]'></input>
+        <div class='red' id='output'></div>
+    </div>
+</body>
+
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+<script type='text/javascript' src='../static/base64_encode.js'></script>
+<script type='text/javascript'>
+    $('#uwotm8').keydown(function() {
+        $('#output').text(base64_encode($(this).val()));
+    });
+</script>
+
+</html>
