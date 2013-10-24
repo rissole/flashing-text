@@ -17,8 +17,9 @@
 
 .huge {
     font-family: 'Coda Caption', sans-serif;
-    font-size: 10vw;
+    font-size: 60pt;
     text-align: center;
+    width: 100%;
 }
 
 .red {
