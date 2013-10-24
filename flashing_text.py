@@ -8,7 +8,7 @@ app = Flask(__name__)
 def main(): 
     return render_template("main.html")
 
-@app.route('/show/<base64_string>')
+@app.route('/e/<base64_string>')
 def show(base64_string):
     string = based64.b64decode(base64_string)
     return render_template("display.html", string=string)
