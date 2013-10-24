@@ -1,0 +1,30 @@
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+.blink {
+    -webkit-animation: blinker 1.8s steps(1) 0 infinite;  
+    animation: blinker 1.8s steps(1) 0 infinite;  
+}
+
+.huge {
+    font-family: 'Coda Caption', sans-serif;
+    font-size: 10vw;
+}
+
+.red {
+    color: #FF0000;
+}
+
+.black-screen {
+    background-color: #000;
+    width: 100%;
+}
