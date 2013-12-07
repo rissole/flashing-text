@@ -61,10 +61,6 @@ input {
     margin-bottom: 50px;
 }
 
-i.fa-facebook-square:hover {
-    color: #3B5998;
-}
-
 .input-group-btn > button {
     width: 75px;
 }
@@ -84,4 +80,50 @@ i.fa-facebook-square:hover {
 
 .btn i.fa {
     line-height: inherit;
+}
+
+.icon {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    background-color: #888;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.icon .fa {
+    color: #000;
+}
+
+.fa-facebook {
+    padding-top: 0.1em;
+    padding-left: 0.3em;
+    font-size: 2em;
+}
+
+.fa-twitter {
+    font-size: 1.6em;
+    padding-top: 0.1em;
+}
+
+.icon.icon-fb:hover {
+    background-color: #3B5998;
+}
+
+.icon.icon-fb:hover .fa, .icon.icon-tw:hover .fa {
+    color: #FFF;
+}
+
+.icon.icon-tw:hover {
+    background-color: #0088cc;
+}
+
+div.radio {
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.radio+.radio {
+    margin-top: 10px;
+    padding-left: 25px;
 }

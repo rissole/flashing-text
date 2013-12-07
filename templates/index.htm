@@ -1,7 +1,6 @@
 <html>
 <head>
 <title>[BREAKING]</title>
-<link href='http://fonts.googleapis.com/css?family=Coda+Caption:800' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="http://bootswatch.com/cyborg/bootstrap.min.css">
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 <link href='../static/literally.css' rel='stylesheet' type='text/css' >
@@ -18,13 +17,12 @@
     </div>
     <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
-                <label for="uwotm8">Enter text:</label>
-                <input class="form-control input-lg" id='uwotm8' value='[BREAKING]'></input>
+                <input class="form-control input-lg" id='uwotm8' placeholder='1. Type stuff in here.'></input>
         </div>
     </div>
     <div class="row gap">
         <div class="col-lg-6 col-lg-offset-3">
-            <button type="button" class="btn btn-primary btn-lg btn-block">Do it.</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="nike">2. Press me.</button>
         </div>
     </div>
     <div class="row">
@@ -38,10 +36,17 @@
             </div><!-- /input-group -->
         </div>
     </div>
+    <div class="row" style="margin-bottom: 0px">
+        <div class="col-lg-4 col-lg-offset-4">
+            <div class="radio"><label><input type="radio" id="plain" name="linktype" checked>Plain</label></div>
+            <div class="radio"><label><input type="radio" id="encrypted" name="linktype">Encrypted</label></div>
+            <hr/>
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-4 col-lg-offset-4 social-bar">
-            <i class="fa fa-facebook-square fa-3x"></i>
-            <i class="fa fa-twitter-square fa-3x"></i>
+            <a href="http://facebook.com"><div class="icon icon-fb"><i class="fa fa-facebook"></i></div></a>
+            <a href="http://twitter.com"><div class="icon icon-tw"><i class="fa fa-twitter"></i></div></a>
         </div>
     </div>
 </div>
@@ -49,9 +54,22 @@
 </body>
 
 <script type='text/javascript'>
+function basedURL() {
+    var theGoods = $('#uwotm8').val();
+    if ($('#encrypted').is(':checked')) {
+        theGoods = base64_encode(theGoods);
+        return 'e/'+theGoods;
+    }
+    return theGoods;
+}
+
 $('#uwotm8').keydown(function() {
-    $('#output').val("http://flashingtext.net/e/"+base64_encode($(this).val()));
+    $('#output').val('http://flashingtext.net/'+basedURL());
 });
+$('#nike').click(function() {
+    document.location.href = basedURL();
+});
+$('input[name=linktype]').change(function() { $('#uwotm8').keydown() });
 </script>
 
 </html>
