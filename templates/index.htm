@@ -2,24 +2,56 @@
 <head>
 <title>[BREAKING]</title>
 <link href='http://fonts.googleapis.com/css?family=Coda+Caption:800' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://bootswatch.com/cyborg/bootstrap.min.css">
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 <link href='../static/literally.css' rel='stylesheet' type='text/css' >
-</head>
-
-<body class='black-screen'>
-    <div class='huge red'>Make flashing text.</div>
-    <div class='middle'>
-        <div class='red'>Enter your text to flash here</div>
-        <input id='uwotm8' value='[BREAKING]'></input>
-        <div class='red' id='output'></div>
-    </div>
-</body>
-
 <script type='text/javascript' src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
 <script type='text/javascript' src='../static/base64_encode.js'></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <div class="row header jumbotron">
+        <h1>FlashingText.net</h1>
+        <p class="lead">Pretty much what you'd expect</p>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+                <label for="uwotm8">Enter text:</label>
+                <input class="form-control input-lg" id='uwotm8' value='[BREAKING]'></input>
+        </div>
+    </div>
+    <div class="row gap">
+        <div class="col-lg-6 col-lg-offset-3">
+            <button type="button" class="btn btn-primary btn-lg btn-block">Do it.</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4">
+            <label>Share:</label>
+            <div class="input-group">
+                <input type="text" id="output" readonly class="form-control">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" title="Copy to clipboard" type="button"><i class="fa fa-clipboard"></i></button>
+                </span>
+            </div><!-- /input-group -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 social-bar">
+            <i class="fa fa-facebook-square fa-3x"></i>
+            <i class="fa fa-twitter-square fa-3x"></i>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
 <script type='text/javascript'>
-    $('#uwotm8').keydown(function() {
-        $('#output').text(base64_encode($(this).val()));
-    });
+$('#uwotm8').keydown(function() {
+    $('#output').val("http://flashingtext.net/e/"+base64_encode($(this).val()));
+});
 </script>
 
 </html>

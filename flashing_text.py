@@ -6,20 +6,20 @@ app = Flask(__name__)
 
 @app.route('/')
 def main(): 
-    return render_template("main.html")
+    return render_template("index.htm")
 
 @app.route('/e/<base64_string>')
 def show(base64_string):
     string = based64.urlsafe_b64decode(base64_string)
-    return render_template("display.html", string=string)
+    return render_template("display.htm", string=string)
 
 @app.route('/<gag>')
 def show_gag(gag):
-    return render_template("display.html", string=gag)
+    return render_template("display.htm", string=gag)
 
 @app.errorhandler(404)
 def custom404(e):
-    return render_template("404.html"), 404
+    return render_template("404.htm"), 404
 
 #LEGACY CODE BELOW, NOT CHANGED SINCE FREELANCER KARMABOARD DAYS
 if __name__ == '__main__':

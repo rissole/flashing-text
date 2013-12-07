@@ -34,3 +34,54 @@
     padding: 0px;
     overflow: hidden;
 }
+
+.header {
+    text-align: center;
+}
+
+input {
+    text-align: center;
+}
+
+.jumbotron {
+    background-color: inherit;
+    padding-bottom: 0px;
+}
+
+.social-bar {
+    display: block;
+    text-align: center;
+}
+
+.row {
+    margin-bottom: 5px;
+}
+
+.gap {
+    margin-bottom: 50px;
+}
+
+i.fa-facebook-square:hover {
+    color: #3B5998;
+}
+
+.input-group-btn > button {
+    width: 75px;
+}
+
+.form-control[readonly] {
+    background-color: #FFFFFF;
+    cursor: inherit;
+    border-radius: 0px;
+    border: none;
+}
+
+.form-control[readonly]:focus {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border: none;
+}
+
+.btn i.fa {
+    line-height: inherit;
+}
