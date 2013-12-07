@@ -68,7 +68,6 @@ input {
 .form-control[readonly] {
     background-color: #FFFFFF;
     cursor: inherit;
-    border-radius: 0px;
     border: none;
 }
 
@@ -91,8 +90,9 @@ input {
     overflow: hidden;
 }
 
-.icon .fa {
-    color: #000;
+.icon-sm {
+    width: 1.5em;
+    height: 1.5em;
 }
 
 .fa-facebook {
@@ -101,9 +101,18 @@ input {
     font-size: 2em;
 }
 
+
+.icon-sm .fa-facebook {
+    font-size: 1.5em;
+}
+
 .fa-twitter {
     font-size: 1.6em;
-    padding-top: 0.1em;
+    padding-top: 0.13em;
+}
+
+.icon-sm .fa-twitter {
+    font-size: 1.3em;
 }
 
 .icon.icon-fb:hover {
@@ -118,6 +127,25 @@ input {
     background-color: #0088cc;
 }
 
+.icon.icon-gh {
+    background-color: inherit;
+}
+
+.icon .fa {
+    color: #000;
+}
+
+.fa.fa-github {
+    font-size: 2.3em;
+    color: #888;
+    margin-top: -0.04em;
+    margin-left: -0.04em;
+}
+
+.fa.fa-github:hover {
+    color: #AAA;
+}
+
 div.radio {
     display: inline-block;
     margin-bottom: 0px;
@@ -126,4 +154,10 @@ div.radio {
 .radio+.radio {
     margin-top: 10px;
     padding-left: 25px;
+}
+
+.social-header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
