@@ -5,7 +5,7 @@ ZeroClipboard.setDefaults({
 });
 function basedURL(uriEncodeInput) {
     if (typeof uriEncodeInput === 'undefined') {
-        encoded = true;
+        uriEncodeInput = true;
     }
     //programming
     var theGoods = $('#uwotm8').val();
