@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>[BREAKING]</title>
+<link rel="stylesheet" href="http://bootswatch.com/cyborg/bootstrap.min.css">
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+<link href="{{ url_for('static', filename='literally.css') }}" rel="stylesheet" type="text/css" >
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/Base64/0.2.0/base64.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/1.2.3/ZeroClipboard.min.js"></script>
+</head>
+
+<body>
+<div class="social-header">
+    <div class="social-bar pull-right">
+        <a href="https://facebook.com/sharer/sharer.php?u=http%3A%2F%2Fflashingtext.net" data-popup><div class="icon icon-fb"><i class="fa fa-facebook"></i></div></a>
+        <a href="https://twitter.com/share?url=http%3A%2F%2Fflashingtext.net" data-popup><div class="icon icon-tw"><i class="fa fa-twitter"></i></div></a>
+        <a href="https://github.com/rissole/flashing-text" target="_blank"><div class="icon icon-gh"><i class="fa fa-github"></i></div></a>
+    </div>
+</div>
+<div class="container">
+    <div class="row header jumbotron">
+        <h1>FlashingText.net</h1>
+        <p class="lead">Pretty much what you'd expect</p>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+                <input class="form-control input-lg" id='uwotm8' placeholder='1. Type stuff in here.'></input>
+        </div>
+    </div>
+    <div class="row gap">
+        <div class="col-lg-6 col-lg-offset-3">
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="nike">2. Press me.</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4">
+            <label>Share:</label>
+            <div class="social-bar pull-right" id="link-shares" style="display: inline-block">
+                <a href="https://facebook.com" class="link-fb" data-popup><div class="icon icon-fb icon-sm"><i class="fa fa-facebook"></i></div></a>
+                <a href="https://twitter.com" class="link-tw" data-popup><div class="icon icon-tw icon-sm"><i class="fa fa-twitter"></i></div></a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4">
+            <div class="input-group">
+                <input type="text" id="output" readonly class="form-control">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button" id="copy-button" data-clipboard-target="output"><i class="fa fa-clipboard"></i></button>
+                </span>
+            </div><!-- /input-group -->
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 0px">
+        <div class="col-lg-4 col-lg-offset-4">
+            <div class="radio"><label><input type="radio" id="plain" name="linktype" checked>Plain</label></div>
+            <div class="radio"><label><input type="radio" id="encrypted" name="linktype">Encrypted</label></div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+<script src="{{ url_for('static', filename='index.js') }}"></script>
+
+</html>

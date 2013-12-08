@@ -5,12 +5,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def main(): 
-    return render_template("main.htm")
+    return render_template("index.htm")
 
 @app.route('/e/<base64_string>')
 def show(base64_string):
-    #Turns out the type of this string is "unicode" and the based64 module wants "str".
-    string = based64.urlsafe_b64decode(str(base64_string)) #nailed it
+    string = based64.urlsafe_b64decode(base64_string)
     return render_template("display.htm", string=string)
 
 @app.route('/<gag>')
@@ -20,9 +19,9 @@ def show_gag(gag):
 
 @app.errorhandler(404)
 def custom404(e):
-    return render_template("display.htm", string="[404 PAGE NOT FOUND]"), 404
+    #security=True
+    return render_template("display.htm", safe=True, string="404 <br/>PAGE NOT FOUND"), 404
 
 #LEGACY CODE BELOW, NOT CHANGED SINCE FREELANCER KARMABOARD DAYS
 if __name__ == '__main__':
-    app.debug = True    #Not legit for production or Blake.
     app.run(host='0.0.0.0') 

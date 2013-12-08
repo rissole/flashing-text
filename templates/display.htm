@@ -1,31 +1,31 @@
 <html>
 <head>
-<title>[BREAKING]</title>
+<title>{{ string|striptags }}</title>
 <link href='http://fonts.googleapis.com/css?family=Coda+Caption:800' rel='stylesheet' type='text/css'>
-<link href='../static/literally.css' rel='stylesheet' type='text/css' >
+<link href='{{ url_for("static", filename="literally.css") }}' rel='stylesheet' type='text/css' >
 </head>
 
-<body class='black-screen' style='visibility: hidden'>
-    <div class='huge red --no-fail'>{{string}}</div>
+<body class='black-screen'>
+<div class='huge red gag' style='visibility: hidden'>
+{% if safe is defined %}
+    {{ string|safe }}
+{% else %}
+    {{ string }}
+{% endif %}
+</div>
 </body>
 
 <script type='text/javascript' src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
-<script type='text/javascript' src='../static/jquery.fittext.js'></script>
+<script type='text/javascript' src='{{ url_for("static", filename="jquery.center.js") }}'></script>
+<script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.1/jquery.fittext.min.js'></script>
 <script type='text/javascript'>
-    jQuery.fn.center = function () {
-        this.css('position', 'absolute');
-        this.css('top', Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
-                                 $(window).scrollTop()) + 'px');
-        this.css('left', Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + 
-                                  $(window).scrollLeft()) + 'px');
-        return this;
-    }
-
-    $('.--no-fail').fitText();
-    $('.--no-fail').center().css('visibility', 'visible').addClass('blink');
+$(function() {
+    $('.gag').fitText();
+    $('.gag').center().css('visibility', 'visible').addClass('blink');
     $(window).on('resize.fittext orientationchange.fittext', function() {
-       $('.--no-fail').center();
+       $('.gag').center();
     });
+});
 </script>
 
 </html>

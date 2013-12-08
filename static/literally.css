@@ -17,8 +17,9 @@
 
 .huge {
     font-family: 'Coda Caption', sans-serif;
-    font-size: 10vw;
+    font-size: 60pt;
     text-align: center;
+    width: 100%;
 }
 
 .red {
@@ -32,4 +33,146 @@
     margin: 0px;
     padding: 0px;
     overflow: hidden;
+}
+
+.header {
+    text-align: center;
+}
+
+input {
+    text-align: center;
+}
+
+.jumbotron {
+    background-color: inherit;
+    padding-bottom: 0px;
+}
+
+.social-bar {
+    display: block;
+    text-align: center;
+}
+
+.row {
+    margin-bottom: 5px;
+}
+
+.gap {
+    margin-bottom: 50px;
+}
+
+.input-group-btn > button {
+    width: 75px;
+}
+
+.form-control[readonly] {
+    background-color: #FFFFFF;
+    cursor: inherit;
+    border: none;
+}
+
+.form-control[readonly]:focus {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border: none;
+}
+
+.btn i.fa {
+    line-height: inherit;
+}
+
+.icon {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    background-color: #888;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.icon-sm {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.fa-facebook {
+    padding-top: 0.1em;
+    padding-left: 0.3em;
+    font-size: 2em;
+}
+
+
+.icon-sm .fa-facebook {
+    font-size: 1.5em;
+}
+
+.fa-twitter {
+    font-size: 1.6em;
+    padding-top: 0.13em;
+}
+
+.icon-sm .fa-twitter {
+    font-size: 1.3em;
+}
+
+.icon.icon-fb:hover {
+    background-color: #3B5998;
+}
+
+.icon.icon-fb:hover .fa, .icon.icon-tw:hover .fa {
+    color: #FFF;
+}
+
+.icon.icon-tw:hover {
+    background-color: #0088cc;
+}
+
+.icon.icon-gh {
+    background-color: inherit;
+}
+
+.icon .fa {
+    color: #000;
+}
+
+.fa.fa-github {
+    font-size: 2.3em;
+    color: #888;
+    margin-top: -0.04em;
+    margin-left: -0.04em;
+}
+
+.fa.fa-github:hover {
+    color: #AAA;
+}
+
+div.radio {
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.radio+.radio {
+    margin-top: 10px;
+    padding-left: 25px;
+}
+
+.social-header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* styling taken from the #btn class */
+.zeroclipboard-is-hover {
+    color: #fff;
+    background-color: #2386b4;
+    border-color: #1f79a3;
+}
+ 
+.zeroclipboard-is-active {
+    color: #fff;
+    background-color: #2386b4;
+    border-color: #1f79a3;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
 }
