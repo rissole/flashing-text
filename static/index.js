@@ -15,7 +15,7 @@ function basedURL(uriEncodeInput) {
         theGoods = window.btoa(theGoods);
         theGoods = 'e/'+theGoods;
     }
-    return 'http://flashingtext.net/'+theGoods;
+    return window.location.protocol + '//' + window.location.host + '/' + theGoods;
 }
 
 function updateLinkShares() {

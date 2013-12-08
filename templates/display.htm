@@ -1,23 +1,31 @@
 <html>
 <head>
-<title>[BREAKING]</title>
+<title>{{ string|striptags }}</title>
 <link href='http://fonts.googleapis.com/css?family=Coda+Caption:800' rel='stylesheet' type='text/css'>
-<link href='../static/literally.css' rel='stylesheet' type='text/css' >
+<link href='{{ url_for("static", filename="literally.css") }}' rel='stylesheet' type='text/css' >
 </head>
 
 <body class='black-screen'>
-<div class='huge red gag' style='visibility: hidden'>404<br/>PAGE NOT FOUND</div>
+<div class='huge red gag' style='visibility: hidden'>
+{% if safe is defined %}
+    {{ string|safe }}
+{% else %}
+    {{ string }}
+{% endif %}
+</div>
 </body>
 
 <script type='text/javascript' src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
-<script type='text/javascript' src='../static/jquery.fittext.js'></script>
+<script type='text/javascript' src='{{ url_for("static", filename="jquery.center.js") }}'></script>
 <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.1/jquery.fittext.min.js'></script>
 <script type='text/javascript'>
+$(function() {
     $('.gag').fitText();
     $('.gag').center().css('visibility', 'visible').addClass('blink');
     $(window).on('resize.fittext orientationchange.fittext', function() {
        $('.gag').center();
     });
+});
 </script>
 
 </html>

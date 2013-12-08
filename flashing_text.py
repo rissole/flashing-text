@@ -19,9 +19,8 @@ def show_gag(gag):
 
 @app.errorhandler(404)
 def custom404(e):
-    return render_template("404.htm"), 404
+    return render_template("display.htm", safe=True, string="404 <br/>PAGE NOT FOUND"), 404
 
 #LEGACY CODE BELOW, NOT CHANGED SINCE FREELANCER KARMABOARD DAYS
 if __name__ == '__main__':
-    app.debug = True    #Not legit for production or Blake.
     app.run(host='0.0.0.0') 
