@@ -1,12 +1,13 @@
+//literally Adobe/Macromedia/Shockwave flash DAE 90s?
 ZeroClipboard.setDefaults({
     moviePath: "http://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/1.2.3/ZeroClipboard.swf",
     trustedOrigins: [window.location.protocol + "//" + window.location.host]
 });
-
 function basedURL(uriEncodeInput) {
     if (typeof uriEncodeInput === 'undefined') {
         encoded = true;
     }
+    //programming
     var theGoods = $('#uwotm8').val();
     if (uriEncodeInput) {
         theGoods = encodeURIComponent(theGoods);
@@ -23,13 +24,22 @@ function updateLinkShares() {
     $('#link-shares > a.link-tw').attr('href', 'https://twitter.com/share?url='+encodeURIComponent(basedURL(false)));
 }
 
+var goToBasedURL = function() {
+    document.location.href = basedURL();
+};
+
 $('#uwotm8').on('input', function() {
     $('#output').val(basedURL());
     updateLinkShares();
 });
 
 $('#nike').click(function() {
-    document.location.href = basedURL();
+    goToBasedURL();
+});
+
+$('.basedform').submit(function(e) {
+    goToBasedURL();
+    return false; // returning false prevents the form from submitting suuuuuuuuuuuuuuuuuuuuuuuuuuuure js
 });
 
 $('input[name=linktype]').change(function() { $('#uwotm8').trigger('input') });
