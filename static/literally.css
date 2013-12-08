@@ -161,3 +161,18 @@ div.radio {
     top: 20px;
     right: 20px;
 }
+
+/* styling taken from the #btn class */
+.zeroclipboard-is-hover {
+    color: #fff;
+    background-color: #2386b4;
+    border-color: #1f79a3;
+}
+ 
+.zeroclipboard-is-active {
+    color: #fff;
+    background-color: #2386b4;
+    border-color: #1f79a3;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}

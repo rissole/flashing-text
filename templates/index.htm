@@ -3,18 +3,19 @@
 <title>[BREAKING]</title>
 <link rel="stylesheet" href="http://bootswatch.com/cyborg/bootstrap.min.css">
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-<link href='../static/literally.css' rel='stylesheet' type='text/css' >
-<script type='text/javascript' src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
-<script type='text/javascript' src='../static/base64_encode.js'></script>
+<link href="../static/literally.css" rel="stylesheet" type="text/css" >
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/Base64/0.2.0/base64.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/1.2.3/ZeroClipboard.min.js"></script>
 </head>
 
 <body>
 <div class="social-header">
     <div class="social-bar pull-right">
-        <a href="http://facebook.com"><div class="icon icon-fb"><i class="fa fa-facebook"></i></div></a>
-        <a href="http://twitter.com"><div class="icon icon-tw"><i class="fa fa-twitter"></i></div></a>
-        <a href="http://github.com"><div class="icon icon-gh"><i class="fa fa-github"></i></div></a>
+        <a href="https://facebook.com/sharer/sharer.php?u=http%3A%2F%2Fflashingtext.net" data-popup><div class="icon icon-fb"><i class="fa fa-facebook"></i></div></a>
+        <a href="https://twitter.com/share?url=http%3A%2F%2Fflashingtext.net" data-popup><div class="icon icon-tw"><i class="fa fa-twitter"></i></div></a>
+        <a href="https://github.com/rissole/flashing-text" target="_blank"><div class="icon icon-gh"><i class="fa fa-github"></i></div></a>
     </div>
 </div>
 <div class="container">
@@ -35,9 +36,9 @@
     <div class="row">
         <div class="col-lg-4 col-lg-offset-4">
             <label>Share:</label>
-            <div class="social-bar pull-right" style="display: inline-block">
-                <a href="http://facebook.com"><div class="icon icon-fb icon-sm"><i class="fa fa-facebook"></i></div></a>
-                <a href="http://twitter.com"><div class="icon icon-tw icon-sm"><i class="fa fa-twitter"></i></div></a>
+            <div class="social-bar pull-right" id="link-shares" style="display: inline-block">
+                <a href="https://facebook.com" class="link-fb" data-popup><div class="icon icon-fb icon-sm"><i class="fa fa-facebook"></i></div></a>
+                <a href="https://twitter.com" class="link-tw" data-popup><div class="icon icon-tw icon-sm"><i class="fa fa-twitter"></i></div></a>
             </div>
         </div>
     </div>
@@ -46,7 +47,7 @@
             <div class="input-group">
                 <input type="text" id="output" readonly class="form-control">
                 <span class="input-group-btn">
-                    <button class="btn btn-primary" title="Copy to clipboard" type="button"><i class="fa fa-clipboard"></i></button>
+                    <button class="btn btn-primary" type="button" id="copy-button" data-clipboard-target="output"><i class="fa fa-clipboard"></i></button>
                 </span>
             </div><!-- /input-group -->
         </div>
@@ -61,23 +62,6 @@
 </div>
 </body>
 
-<script type='text/javascript'>
-function basedURL() {
-    var theGoods = $('#uwotm8').val();
-    if ($('#encrypted').is(':checked')) {
-        theGoods = base64_encode(theGoods);
-        return 'e/'+theGoods;
-    }
-    return theGoods;
-}
-
-$('#uwotm8').keydown(function() {
-    $('#output').val('http://flashingtext.net/'+basedURL());
-});
-$('#nike').click(function() {
-    document.location.href = basedURL();
-});
-$('input[name=linktype]').change(function() { $('#uwotm8').keydown() });
-</script>
+<script src="../static/index.js"></script>
 
 </html>

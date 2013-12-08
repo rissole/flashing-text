@@ -1,0 +1,53 @@
+ZeroClipboard.setDefaults({
+    moviePath: "http://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/1.2.3/ZeroClipboard.swf",
+    trustedOrigins: [window.location.protocol + "//" + window.location.host]
+});
+
+function basedURL(uriEncodeInput) {
+    if (typeof uriEncodeInput === 'undefined') {
+        encoded = true;
+    }
+    var theGoods = $('#uwotm8').val();
+    if (uriEncodeInput) {
+        theGoods = encodeURIComponent(theGoods);
+    }
+    if ($('#encrypted').is(':checked')) {
+        theGoods = window.btoa(theGoods);
+        theGoods = 'e/'+theGoods;
+    }
+    return 'http://flashingtext.net/'+theGoods;
+}
+
+function updateLinkShares() {
+    $('#link-shares > a.link-fb').attr('href', 'https://facebook.com/sharer/sharer.php?u='+encodeURIComponent(basedURL(false)));
+    $('#link-shares > a.link-tw').attr('href', 'https://twitter.com/share?url='+encodeURIComponent(basedURL(false)));
+}
+
+$('#uwotm8').on('input', function() {
+    $('#output').val(basedURL());
+    updateLinkShares();
+});
+
+$('#nike').click(function() {
+    document.location.href = basedURL();
+});
+
+$('input[name=linktype]').change(function() { $('#uwotm8').trigger('input') });
+
+$('a[data-popup]').click(function() {
+    window.open(this.href, 'Share', 'width=400,height=300,toolbar=no,menubar=no,scrollbars=no,location=no,directories=no');
+    return false;
+});
+
+$('div.input-group').tooltip({
+    'placement': 'right',
+    'title': 'Copied!',
+    'trigger': 'manual'
+});
+
+var clip = new ZeroClipboard($('#copy-button'));
+clip.on('load', function(client) {
+    client.on('complete', function(client, args) {
+        $('div.input-group').tooltip('show');
+    });
+});
