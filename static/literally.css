@@ -111,8 +111,9 @@ input {
 }
 
 .fa-twitter {
-    font-size: 1.6em;
-    padding-top: 0.3em;
+    /* EMS ARE HARD APPARENTLY */
+    font-size: 200%;
+    padding-top: 10%;
 }
 
 .icon-sm .fa-twitter {
